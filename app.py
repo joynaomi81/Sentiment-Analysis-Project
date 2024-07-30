@@ -1,8 +1,19 @@
+
 import streamlit as st
 import joblib
+import os
 
-# Load the trained model
-model = joblib.load('sentiment_model.pkl')
+# Define the path to the model file
+model_path = 'sentiment_model.pkl'
+
+# Check if the file exists
+if os.path.exists(model_path):
+    # Load the trained model
+    model = joblib.load(model_path)
+else:
+    # Display an error message
+    st.error(f"Model file '{model_path}' not found. Please ensure the file is in the correct location.")
+    st.stop()  # Stop the script execution
 
 # Title of the app
 st.title('Movie Reviews Sentiment Analysis')
@@ -20,7 +31,7 @@ if st.button('Analyze Sentiment'):
     else:
         st.write('Please enter a review to analyze.')
 
-
+# Instructions for the user
 st.write("""
 ### Instructions:
 - Enter a movie review in the text area above.
