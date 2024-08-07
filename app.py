@@ -37,7 +37,7 @@ def preprocess_text(text):
 # Load dataset
 @st.cache_data
 def load_data():
-    data = pd.read_csv('IMDB Dataset.csv')
+    data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/ Movie Reviews Sentiment Analysis in NLP.ipynb')
     data['review'] = data['review'].apply(preprocess_text)
     return data
 
