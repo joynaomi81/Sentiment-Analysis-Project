@@ -27,5 +27,10 @@ def main():
     if st.button("Predict"):
         if user_input:
             model, vectorizer = load_model()
-            prediction = predict_sentiment(user
+            prediction = predict_sentiment(user_input, model, vectorizer)
+            st.write(f"Predicted Sentiment: {prediction}")
+        else:
+            st.write("Please enter a review for prediction.")
 
+if __name__ == '__main__':
+    main()
