@@ -51,17 +51,17 @@ def train_model(data):
     model = LogisticRegression()
     model.fit(X, y)
 
-    # Save the model and vectorizer
-    with open('model.pkl', 'wb') as f:
-        pickle.dump((model, tfidf), f)
+    
+# Save the CountVectorizer and the model
+pickle.dump(cv, open('cv-vectorizer.pkl', 'wb'))
+pickle.dump(mnb, open('Movie_Reviews_Sentiment_Analysis.pkl', 'wb'))
 
     return model, tfidf
 
-# Load model and vectorizer
-def load_model():
-    with open('model.pkl', 'rb') as f:
-        model, tfidf = pickle.load(f)
-    return model, tfidf
+# Load the CountVectorizer and model from pickle files
+save_cv = pickle.load(open('cv-vectorizer.pkl', 'rb'))
+model = pickle.load(open('Movie_Reviews_Sentiment_Analysis.pkl', 'rb'))
+
 
 # Streamlit app
 st.title("Movie Reviews Sentiment Analysis")
