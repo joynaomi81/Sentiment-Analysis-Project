@@ -1,8 +1,15 @@
 import streamlit as st
 import pickle
+import os
 
-#CountVectorizer and model from pickle files
-cv = pickle.load(open('cv-vectorizer.pkl', 'rb'))
+# Print current working directory
+print("/content/cv-vectorzier.plk:", os.getcwd())
+
+# List files in the current working directory
+print("Files in the current working directory:", os.listdir())
+
+# Load the CountVectorizer and model from pickle files
+save_cv = pickle.load(open('cv-vectorizer.pkl', 'rb'))
 model = pickle.load(open('Movie_Reviews_Sentiment_Analysis.pkl', 'rb'))
 
 def predict_sentiment(text):
