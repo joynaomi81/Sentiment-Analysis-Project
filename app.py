@@ -56,7 +56,6 @@ def train_model(data):
 pickle.dump(cv, open('cv-vectorizer.pkl', 'wb'))
 pickle.dump(mnb, open('Movie_Reviews_Sentiment_Analysis.pkl', 'wb'))
 
-    return model, tfidf
 
 # Load the CountVectorizer and model from pickle files
 save_cv = pickle.load(open('cv-vectorizer.pkl', 'rb'))
