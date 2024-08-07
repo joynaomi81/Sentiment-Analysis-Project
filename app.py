@@ -12,6 +12,16 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+import pickle
+
+# Initialize the CountVectorizer
+cv = CountVectorizer()
+
+
+# Save the trained vectorizer to a file
+pickle.dump(cv, open('cv-vectorizer.pkl', 'wb'))
+
 
 
 # Download necessary NLTK data
