@@ -12,7 +12,7 @@ def output(input):
     prediction = analyzer.polarity_scores(input)
     text = ""
     if prediction['neg']>=0.5 and prediction['neu']<=0.49 and prediction['pos']<=0.49:
-        text='This comment is bad'
+        text='This comment is Negative'
     elif prediction['neg']<=0.49 and prediction['neu']>=0.50 and prediction['pos']<=0.49:
         text='This comment is neither positive nor negative'
     elif prediction['neg']<=0.49 and prediction['neu']<=0.49 and prediction['pos']>=0.50:
