@@ -1,4 +1,4 @@
-mport nltk
+import nltk
 import streamlit as st
 import pickle
 import nltk
