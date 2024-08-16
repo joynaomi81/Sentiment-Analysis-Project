@@ -1,5 +1,8 @@
+mport nltk
 import streamlit as st
 import pickle
+import nltk
+nltk.download('vader_lexicon')
 from nltk.sentiment import SentimentIntensityAnalyzer
 
 # Load your pre-trained sentiment analysis model
