@@ -22,10 +22,10 @@ def output(input):
 
 
 
-st.title('Sentiment Analysis')
+st.title('Sentiment Analysis App')
 input = st.text_input('Enter Your Phrase Here')
 final_display = ""
-if st.button('Check Comment'):
+if st.button('Check Review'):
     final_display = output(input)
     st.success(final_display)
 
