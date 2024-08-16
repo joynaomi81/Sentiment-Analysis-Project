@@ -7,10 +7,10 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 analyzer = SentimentIntensityAnalyzer()
 
-st.title('Movie Reviews Sentiment Analysis App')
+st.title(' Sentiment Analysis App')
 
 # Input text box
-review = st.text_area('Enter your movie review:', '')
+review = st.text_area('Enter your review:', '')
 
 # Button to perform sentiment analysis
 if st.button('Review'):
