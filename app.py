@@ -1,25 +1,31 @@
 import nltk
 import streamlit as st
 import joblib
+import nltk
+nltk.download('vader_lexicon')
 from nltk.sentiment import SentimentIntensityAnalyzer
-
-# No need to download vader_lexicon again
-# nltk.download('vader_lexicon')
-
-def output(input_text):
-    analyzer = SentimentIntensityAnalyzer()
-    prediction = analyzer.polarity_scores(input_text)
     
-    if prediction['neg'] > prediction['pos'] and prediction['neg'] > prediction['neu']:
-        text = 'This comment is bad'
-    elif prediction['pos'] > prediction['neg'] and prediction['pos'] > prediction['neu']:
-        text = 'This comment is good'
-    else:
-        text = 'This comment is neither good nor bad'
+
+
+def output(input):
+    analyzer = SentimentIntensityAnalyzer()
+    prediction = analyzer.polarity_scores(input)
+    text = ""
+    if prediction['neg']>=0.5 and prediction['neu']<=0.49 and prediction['pos']<=0.49:
+        text='This comment is bad'
+    elif prediction['neg']<=0.49 and prediction['neu']>=0.50 and prediction['pos']<=0.49:
+        text='This comment is neither positive nor negative'
+    elif prediction['neg']<=0.49 and prediction['neu']<=0.49 and prediction['pos']>=0.50:
+        text = 'This comment is Positive'
 
     return text
 
-# Example usage
-comment = "Your example text here."
-result = output(comment)
-st.write(result)
+
+
+st.title('Sentiment Analysis')
+input = st.text_input('Enter Your Phrase Here')
+final_display = ""
+if st.button('Check Comment'):
+    final_display = output(input)
+    st.success(final_display)
+
