@@ -21,11 +21,11 @@ if st.button('Review'):
 
         # Provide an overall sentiment based on the compound score
         if scores['compound'] >= 0.05:
-            st.success('Overall Sentiment: Positive')
+            st.success('This comment is: Positive')
         elif scores['compound'] <= -0.05:
-            st.error('Overall Sentiment: Negative')
+            st.error('This comment is: Negative')
         else:
-            st.warning('Overall Sentiment: Neutral')
+            st.warning('This comment is: Neutral')
     else:
         st.write('Please enter a review to analyze.')
 
