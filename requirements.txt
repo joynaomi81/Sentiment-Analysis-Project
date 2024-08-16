@@ -8,5 +8,5 @@ wordcloud
 spacy
 textblob
 beautifulsoup4
-joblib
+pickle
 
