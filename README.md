@@ -12,7 +12,9 @@ Text Normalization
 * Stemming 
 * Removing stopwords 
 * Removing punctuation
+  
 Vectorization
+
 This is the process of converting text into numerical vectors.  For this project, Term Frequency-Inverse Document Frequency (TF-IDF) and Bag of Words (BoW ) were used.
 
 # Model Training
