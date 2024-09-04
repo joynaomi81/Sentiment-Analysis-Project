@@ -12,3 +12,19 @@ Text Normalization
 * Stemming 
 * Removing stopwords 
 * Removing punctuation
+Vectorization
+This is the process of converting text into numerical vectors.  For this project, Term Frequency-Inverse Document Frequency (TF-IDF) and Bag of Words (BoW ) were used.
+
+# Model Training
+Naive Bayes was used in this project. The model was trained using both Bag of Words (BoW) and Term Frequency-Inverse Document Frequency (TF-IDF) representations. The Naive Bayes classifier is used to classify reviews into positive or negative categories based on the features extracted from BoW and TF-IDF.
+
+# Model Evaluation
+The classification report and accuracy of the Naive Bayes model includes:
+
+Accuracy: 0.8517, meaning the model predicted the sentiment correctly for approximately 85% of the text samples.
+Classification Report:
+* Precision: 0.85
+* Recall: 0.85
+* F1-score: 0.85
+
+
