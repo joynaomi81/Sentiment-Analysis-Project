@@ -7,8 +7,8 @@ IMDB movie reviews dataset, sourced from Kaggle, was used for this project. The 
 
 # Data preprocessing 
 Text Normalization 
-Lowering text 
-Tokenization 
-Stemming 
-Removing stopwords 
-Removing punctuation
+* Lowering text 
+* Tokenization 
+* Stemming 
+* Removing stopwords 
+* Removing punctuation
