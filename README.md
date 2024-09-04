@@ -22,6 +22,7 @@ Naive Bayes was used in this project. The model was trained using both Bag of Wo
 The classification report and accuracy of the Naive Bayes model includes:
 
 Accuracy: 0.8517, meaning the model predicted the sentiment correctly for approximately 85% of the text samples.
+
 Classification Report:
 * Precision: 0.85
 * Recall: 0.85
