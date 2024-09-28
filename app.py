@@ -9,6 +9,7 @@ analyzer = SentimentIntensityAnalyzer()
 
 st.title(' Sentiment Analysis App')
 
+st.image("Sentiment-Analysis1.webp")
 # Input text box
 review = st.text_area('Enter your review:', '')
 
