@@ -1,33 +1,24 @@
-import nltk
 import streamlit as st
-import pickle
-import nltk
-nltk.download('vader_lexicon')
-from nltk.sentiment import SentimentIntensityAnalyzer
+import joblib
 
-analyzer = SentimentIntensityAnalyzer()
+# Load the trained model and TF-IDF vectorizer
+model = joblib.load('model.pkj')  # This should be the path where you saved your model
 
-st.title(' Sentiment Analysis App')
+# Title of the app
+st.title("Sentiment Analysis App")
 
-st.image("Sentiment-Analysis1.webp")
-# Input text box
-review = st.text_area('Enter your review:', '')
+# Text input from the user
+user_input = st.text_input("Enter a text for sentiment analysis:")
 
-# Button to perform sentiment analysis
-if st.button('Review'):
-    if review:
-        # Perform sentiment analysis
-        scores = analyzer.polarity_scores(review)
-
-
-        # Provide an overall sentiment based on the compound score
-        if scores['compound'] >= 0.05:
-            st.success('This comment is: Positive')
-        elif scores['compound'] <= -0.05:
-            st.error('This comment is: Negative')
-        else:
-            st.warning('This comment is: Neutral')
+# Predict button
+if st.button("Predict"):
+    if user_input:
+        # Make prediction
+        prediction = model.predict([user_input])
+        
+        # Display the result
+        sentiment = "Positive" if prediction[0] == 1 else "Negative"
+        st.write(f'Sentiment: {sentiment}')
     else:
-        st.write('Please enter a review to analyze.')
+        st.write("Please enter text to analyze.")
 
-    
