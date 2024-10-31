@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 
 # Load the trained model
-model = joblib.load('model.pkl')  
+model = joblib.load('model.pkj')  
 # Title of the app
 st.title("Sentiment Analysis App")
 
