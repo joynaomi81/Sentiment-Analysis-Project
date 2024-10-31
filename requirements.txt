@@ -1,11 +1,3 @@
-numpy
-pandas
-seaborn
-matplotlib
-nltk
+streamlit
 scikit-learn
-wordcloud
-spacy
-textblob
-beautifulsoup4
-
+joblib
